@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Animation</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <!-- <script src="https://kit.fontawesome.com/46703870e6.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+ 
+ <section class="home">
+     <div class="container">
+        <div class="row">
+          <div class="membership">
+            <h2 class="membership">Membership</h2>
+          </div>
+            <div class="home-text">
+                 <h1>Why Join Us?</h1>
+                 <p class="animate-text">
+                  <span class="text1">BE CREATIVE</span>
+                  <span class="text2">STAY CONNECTED</span>
+                  <span class="text3">KEEP INVENTING</span>
+                 </p>
+            </div>
+        </div>
+     </div>
+ </section>
+ <section class="main">
+  <div class="sub-head">
+    <div class="icon">
+    <i class="uil uil-lightbulb-alt"></i>
+    </div>
+    <div class="textcenter">
+      <p>ACM offers the resources, access and tools to invent the future. No one has a larger global network of professional peers. No one has more exclusive content. No one presents more forward-looking events. Or confers more prestigious awards. Or provides a more comprehensive learning center.</p>
+      <br>
+      <p>MADE BY YASH MAHADEO KATE</p>
+    </div>
+   </div>
+ </section>
+<section class="form">
+  <div class="box">
+    <h1>Membership Form</h1>
+    <form action="">
+      <div class="input-box">
+        <input
+          type="text"
+          name="Username"
+          id="name"
+          autocomplete="off"
+          required
+        />
+        <label for=Name">Full Name</label>
+      </div>
+      <div class="input-box">
+        <input
+          type="text"
+          id="name"
+          autocomplete="off"
+          required
+        />
+        <label for="Email">Email Address</label>
+      </div>
+      <div class="input-box">
+        <input
+          type="text"
+          id="phone"
+          autocomplete="off"
+          required
+        />
+        <label for="Email">Phone Number</label>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</section>
+<!-- <section class="new">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum, dolorum? Accusamus, sunt nam est quasi neque nemo, beatae illo incidunt provident amet atque similique alias? Quam aliquam quasi labore mollitia?
+</section>
+
+<p>MADE BY YASH MAHADEO KATE</p> -->
+
+<script>
+         const txts=document.querySelector(".animate-text").children,
+               txtsLen=txts.length;
+           let index=0;
+          const textInTimer=3000,
+                textOutTimer=2800;
+
+         function animateText() {
+            for(let i=0; i<txtsLen; i++){
+              txts[i].classList.remove("text-in","text-out");  
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(function(){
+                txts[index].classList.add("text-out");              
+            },textOutTimer)
+
+            setTimeout(function(){
+
+              if(index == txtsLen-1){
+                  index=0;
+                }
+               else{
+                   index++;
+                 }
+                animateText();
+            },textInTimer); 
+         }
+         
+         window.onload=animateText;
+   
+</script>
+
+</body>
+</html>
+
+
+
+
